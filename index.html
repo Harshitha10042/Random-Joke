@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f0f0f0;
+            padding: 50px;
+        }
+        .quote-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        blockquote {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        span {
+            color: gray;
+            font-style: italic;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-box">
+        <h2>Random Joke</h2>
+        <blockquote id="quote">Loading...</blockquote>
+        <span id="author">Loading...</span>
+        <div>
+            <button onclick="getQuote()">New Joke</button>
+        </div>
+    </div>
+
+    <script>
+        const quote = document.getElementById("quote");
+        const author = document.getElementById("author");
+        const api_url = "https://official-joke-api.appspot.com/random_joke";
+
+        async function getQuote() {
+            const response = await fetch(api_url);
+            const data = await response.json();
+            quote.innerHTML = data.setup;
+            author.innerHTML = "- " + data.punchline;
+        }
+
+        // Load a joke when page opens
+        getQuote();
+    </script>
+</body>
+</html>

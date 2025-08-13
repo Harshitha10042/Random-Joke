@@ -1,0 +1,78 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full page center alignment */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74ABE2, #5563DE);
+    color: #333;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main quote card */
+.quote-box {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Title */
+.quote-box h2 {
+    font-size: 22px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Quote text */
+blockquote {
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+    margin: 20px 0;
+    line-height: 1.4;
+}
+
+/* Author text */
+#author {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #5563DE;
+    color: white;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #3b4fb1;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
